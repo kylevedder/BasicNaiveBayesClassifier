@@ -25,17 +25,15 @@ def getColor(n=0.5):
     else:
         return 'blue'
 
+
 # Tests to see if the testCenter is within range of the circleCenter
-
-
 def inBayesRange(circleCenter, testCenter):
     circlePoint = (circleCenter[0], circleCenter[1])
     testPoint = (testCenter[0], testCenter[1])
     return distance.euclidean(circlePoint, testPoint) <= BAYES_RADIUS
 
+
 # Gets a numerical prediction based on the circleCenter location
-
-
 def getPrediction(circleCenter):
     circlePoint = (circleCenter[0], circleCenter[1])
     inRange = []
@@ -66,6 +64,7 @@ axes.set_ylim([-4, 4])
 
 drawSize = 100
 
+# Plot all points
 for trips in data:
     # Plot in radius points
     if(inBayesRange(point, trips)):
