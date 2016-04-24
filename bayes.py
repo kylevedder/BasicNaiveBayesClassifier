@@ -58,6 +58,7 @@ def getPredictionColor(circleCenter):
 
 
 axes = plt.gca()
+axes.set_title('Naive Bayes Classifier')
 axes.set_xlim([-4, 4])
 axes.set_ylim([-4, 4])
 
@@ -78,6 +79,10 @@ for trips in data:
 plt.scatter(point[0], point[1], s=drawSize,
             c=getPredictionColor(point), alpha=1.0)
 plt.scatter(point[0], point[1], s=drawSize * 6, c='gray', alpha=0.3)
+
+axes.annotate("P: {:f} \nC: {}".format(getPrediction(point), getPredictionColor(point)), xy=point, xytext=(2.5, -3.5),
+            arrowprops=dict(facecolor='black', shrink=0.05))
+
 
 print("Prediction: {}".format(getPrediction(point)))
 print("Prediction Color: {}".format(getPredictionColor(point)))
