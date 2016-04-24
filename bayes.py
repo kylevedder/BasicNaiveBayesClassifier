@@ -6,13 +6,14 @@ BAYES_RADIUS = 0.7
 
 
 data = []
+#Generate data set
 for i in range(50):
     # Red data set
     data.append((np.random.randn() - 1, np.random.randn() - 1, 0))
     # Blue data set
     data.append((np.random.randn() + 1, np.random.randn() + 1, 1))
 
-# Point to classify
+# Generate point to classify
 point = (np.random.randn(), np.random.randn())
 
 
