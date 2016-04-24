@@ -70,7 +70,7 @@ for trips in data:
     # Plot in radius points
     if(inBayesRange(point, trips)):
         plt.scatter(trips[0], trips[1], s=drawSize,
-                    c=getColor(trips[2]), alpha=0.8)
+                    c=getColor(trips[2]), alpha=0.6)
     # Plot out of radius points
     else:
         plt.scatter(trips[0], trips[1], s=drawSize,
@@ -80,7 +80,7 @@ plt.scatter(point[0], point[1], s=drawSize,
             c=getPredictionColor(point), alpha=1.0)
 plt.scatter(point[0], point[1], s=drawSize * 6, c='gray', alpha=0.3)
 
-axes.annotate("P: {:f} \nC: {}".format(getPrediction(point), getPredictionColor(point)), xy=point, xytext=(2.5, -3.5),
+axes.annotate("Pred:  {:f}\nColor: {}".format(getPrediction(point), getPredictionColor(point)), xy=point, xytext=(2, -3.5),
             arrowprops=dict(facecolor='black', shrink=0.05))
 
 
